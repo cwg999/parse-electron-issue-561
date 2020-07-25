@@ -1,0 +1,60 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [{
+      "name": "Node Development",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/index.js",
+      "stopOnEntry": false,
+      "args": [],
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "runtimeArgs": ["--nolazy"],
+      "env": {
+        "DEBUG": "", // hide a lot of extra debugging info
+        "NODE_ENV": "development",
+      },
+      "outputCapture": "std",
+      "console": "internalConsole",
+      "sourceMaps": true,
+      "outFiles": [],
+      "skipFiles": [
+        // "${workspaceRoot}/node_modules/**/*.js",
+        // "<node_internals>/**/*.js"
+      ],
+      "disableOptimisticBPs": true,
+      "internalConsoleOptions": "openOnSessionStart"
+      // "sourceMapPathOverrides": {
+      //   "webpack: ///*": "${workspaceRoot}/*"
+      // }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Electron Main",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+      "windows": {
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
+      },
+      "args": ["."],
+      "skipFiles": ["<node_internals>/**"],
+      "env": {
+        "START_ELECTRON": "true",
+        //   "DEBUG": "", // hide a lot of extra debugging info
+        "MONGODB_VERSION": "^3.6.0",
+        "NODE_ENV": "development",
+        "ELECTRON_ENABLE_LOGGING": "true",
+        "ELECTRON_LOG_ASAR_READS": "true",
+        "ELECTRON_ENABLE_STACK_DUMPING": "true",
+        "ELECTRON_NO_ASAR": "true"
+      },
+      "outputCapture": "std",
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart"
+    },
+  ]
+}
