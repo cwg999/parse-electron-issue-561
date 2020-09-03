@@ -182,6 +182,7 @@ app.listen(port,function(){
       const { fn } = req.params
       let o = req.body;
       o = new TestClass(o,{sessionToken:undefined, useMasterKey:true});
+      await o.fetch({sessionToken:undefined,useMasterKey:true});
       await TestClassSub[fn](o,{sessionToken:undefined,useMasterKey:true});
       res.json({completed:o.id});
     }catch(err){
