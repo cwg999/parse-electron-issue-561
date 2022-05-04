@@ -15,7 +15,7 @@
     "electron": "7.3.2",
     "mongodb-runner": "4.8.0",
     "parse": "2.15.0",
-    "parse-server": "4.3.0",
+    "parse-server": "4.10.10",
     "serve-static": "^1.14.1"
   }
 }
